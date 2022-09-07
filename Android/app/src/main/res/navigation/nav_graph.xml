@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ExpenseListFragment">
+
+    <fragment
+        android:id="@+id/ExpenseListFragment"
+        android:name="com.example.expenses_app.expenses.expenses.ExpenseListFragment"
+        android:label="@string/list_expenses_label"
+        tools:layout="@layout/fragment_expense_list">
+
+        <action
+            android:id="@+id/action_ExpenseListFragment_to_ExpenseEditFragment"
+            app:destination="@id/ExpenseEditFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/ExpenseEditFragment"
+        android:name="com.example.expenses_app.expenses.expense.ExpenseEditFragment"
+        android:label="@string/edit_expense_label"
+        tools:layout="@layout/fragment_expense_edit">
+
+        <action
+            android:id="@+id/action_ExpenseEditFragment_to_ExpenseListFragment"
+            app:destination="@id/ExpenseListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/FragmentLogin"
+        android:name="com.example.expenses_app.auth.login.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login" />
+</navigation>
